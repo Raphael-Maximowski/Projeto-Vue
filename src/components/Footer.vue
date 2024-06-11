@@ -41,7 +41,7 @@
         <div id="middlebox">
             <div id="mb1">
                 <div>
-                    <img src="../assets/imgFooter/insiderend.png alt="">
+                    <img src="../assets/imgFooter/insiderend.png" alt="">
                 </div>
                 <div>
                     <h2>MARVEL INSIDER</h2>
@@ -86,7 +86,9 @@
 </template>
 
 <script>
-export default {}
+export default {
+    name: 'Footer'
+}
 </script>
 
 <style scoped>
