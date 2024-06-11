@@ -2,7 +2,7 @@
     <nav class="navbar">
         <div class="container-fluid">
             <a><RouterLink to="/">Home</RouterLink></a>
-            <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="60" height="30" />
+            <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="60" height="30" />
             <form class="d-flex" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-danger" type="submit">Search</button>
