@@ -207,4 +207,3 @@ header {
 }
 
 </style>
-</template>
