@@ -1,9 +1,8 @@
 <template>
     <div class="card">
-        <img src="../img/semtítulo.jpeg" alt="Imagem de Exemplo">
+        <img src="" alt="">
         <div class="card-body">
             <h5 class="card-title">Título do Cartão</h5>
-            
         </div>
     </div>
 

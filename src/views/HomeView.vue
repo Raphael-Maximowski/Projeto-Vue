@@ -4,7 +4,7 @@ import NavBar from '@/components/NavBar.vue';
 </script>
 
 <template>
-  <div class="container text-center">
+  <div class="container">
   <div class="row">
     <div class="col">
       <CardsHq />
@@ -32,30 +32,32 @@ import NavBar from '@/components/NavBar.vue';
 <style >
 .container {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
-/* Estilos para a linha */
+
 .row {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   margin-bottom: 10px;
 }
 
-/* Estilos para as colunas */
+
 .col {
+  
   flex: 1;
   padding: 10px;
   box-sizing: border-box;
   margin: 10px;
 }
 
-/* Estilos adicionais para a centralização de texto */
 .text-center {
   text-align: center;
 }
@@ -63,13 +65,29 @@ import NavBar from '@/components/NavBar.vue';
   .col {
     flex: 1 0 45%;
   }
+  
 }
 
-@media (max-width: 480px) {
+
+@media only screen and ((min-width: 375px) and (max-width: 700px)){
   .col {
     flex: 1 0 100%;
   }
+  
 }
 
+@media only screen and ((min-width: 701px) and (max-width: 900px)){
+  .col {
+    flex: 1 0 50%;
+  }
+  
+}
+
+
+@media only screen and ((min-width: 901px) and (max-width: 1200px)){
+  .col {
+    flex: 1 0 33.33%;
+  }
+}
 
 </style>
