@@ -41,7 +41,7 @@
         <div id="middlebox">
             <div id="mb1">
                 <div>
-                    <img src="../assets/imgFooter/insiderend.png alt=">
+                    <img src="../assets/imgFooter/insiderend.png" alt="">
                 </div>
                 <div>
                     <h2>MARVEL INSIDER</h2>
@@ -102,7 +102,7 @@ export default {
         footer {
             background-color: #151515;
             width: 100vw;
-            height: 45vh;
+            height: 70vh;
         }
 
         ul {
@@ -113,7 +113,7 @@ export default {
         a {
             text-decoration: none;
             color: white;
-            font-size: 20px;
+            font-size: 17px;
         }
 
         a:hover {
@@ -150,11 +150,12 @@ export default {
             display: flex;
             height: 4em;
             justify-content: center;
+            margin-bottom: 4em;
         }
 
         #middlebox h2 {
             color: white;
-            font-size: 20px;
+            font-size: 17px;
         }
 
         #mb1 h2{
@@ -188,8 +189,9 @@ export default {
         #bottombox h2 {
             margin-top: 1em;
             margin-bottom: 1em;
-            margin-left: 60px;
+            margin-left: 5vw;
             color: white;
+            font-size: 17px;
         }
 
 </style>
