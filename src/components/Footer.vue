@@ -83,11 +83,18 @@
             </div>
         </div>
     </footer>
+    <button @click="MoreInfo">Next</button>
 </template>
 
 <script>
 export default {
-    name: 'Footer'
+    name: 'Footer',
+
+    methods : {
+    MoreInfo () {
+       this.$router.push('/character')
+    }
+  }
 }
 </script>
 
@@ -113,7 +120,7 @@ export default {
         a {
             text-decoration: none;
             color: white;
-            font-size: 17px;
+            font-size: 2vw;
         }
 
         a:hover {
@@ -132,6 +139,7 @@ export default {
 
         #up1, #up2, #up3 {
             width: 33.33vw;
+            text-align: center;
         }
 
         #up1 {
@@ -155,7 +163,7 @@ export default {
 
         #middlebox h2 {
             color: white;
-            font-size: 17px;
+            font-size: 2.5vw;
         }
 
         #mb1 h2{
@@ -167,7 +175,7 @@ export default {
 
         #middlebox h3 {
             color: #5a5a5a;
-            font-size: 17px;
+            font-size: 2vw;
         }
         #mb1, #mb2 {
             width: 50vw;
@@ -192,6 +200,29 @@ export default {
             margin-left: 5vw;
             color: white;
             font-size: 17px;
+        }
+
+        @media only screen and (min-width: 700px){
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+        }
+
+        #up1, #up2, #up3 {
+        width: 33.33vw;
+        text-align: left;
+        }
+
+        #middlebox h2 {
+        color: white;
+        font-size: 18px;
+        }
+
+        #middlebox h3 {
+            color: #5a5a5a;
+            font-size: 15px;
+        }
         }
 
 </style>

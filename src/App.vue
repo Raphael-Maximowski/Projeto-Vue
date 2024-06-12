@@ -2,7 +2,6 @@
   <div>
     <NavBar />
     <router-view> </router-view>
-    <button>Next</button>
     <Footer />
   </div>
 </template>
@@ -17,7 +16,7 @@ export default {
     NavBar,
     CardsHq,
     Footer
-  }
+  },
 }
 </script>
 <style>
