@@ -194,6 +194,10 @@ export default {
             margin-top: 1em;
         }
 
+        #boximg img {
+            width: 25px;
+        }
+
         #bottombox h2 {
             margin-top: 1em;
             margin-bottom: 1em;

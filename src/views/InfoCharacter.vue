@@ -203,12 +203,12 @@ and (max-width: 700px)){
 
     #boxContent h2 {
         margin-bottom: 1em;
-        font-size: 40px;
+        font-size: 30px;
         font-weight: bolder;
     }
 
     #boxContent p {
-        font-size: 25px;
+        font-size: 20px;
         text-align: justify;
     }
 }
