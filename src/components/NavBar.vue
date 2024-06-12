@@ -161,12 +161,12 @@ header {
     #box1 {
         width: 20vw;
         height: 5em;
-        display: flex;
-        align-items: center;
     }
 
     #box1 img {
         margin-left: 2em;
+        position: fixed;
+        margin-top: 1.2em;
     }
 
     #box2 {
