@@ -10,6 +10,9 @@
 <script>
 export default {
     name: 'CardsHq',
+    props: {
+        card: {}
+    }   
 }
 </script>
 <style>
