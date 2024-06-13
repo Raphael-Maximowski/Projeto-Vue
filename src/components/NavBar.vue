@@ -2,16 +2,28 @@
 <header>
     <nav>
         <div id="box1">
-            <div class="width1000">
-                <img src="../assets/imgFooter/logo.png" alt="">]
+            <div class="width1000" @click="comeback">
+                <img src="../assets/imgFooter/logo.png" alt="">
             </div>
-            <div class="width900">
-                <img src="../assets/imgFooter/menu.png" alt="">
+            <div class="width900" id="menu">
+                <div @click = "showmenu">
+                    <img src="../assets/imgFooter/menu.png" alt="">
+                </div>
+            </div>
+            <div class="dropdown" v-if = "dropdown == true">
+                <ul >
+                    <li>Personagens</li>
+                    <li>Comics</li>
+                    <li>Criadores</li>
+                    <li>Eventos</li>
+                    <li>Séries</li>
+                    <li>Histórias</li>
+                </ul>
             </div>
         
         </div>
         <div id="box2">
-            <div id="imgWidth900">
+            <div id="imgWidth900" @click="comeback">
                 <img src="../assets/imgFooter/Marvel_Logo.svg.png" alt="">
             </div>
             <ul class="width1000">
@@ -27,7 +39,7 @@
         <div id="box3">
             <form action="">
                 <div id="flex">
-                 <div id="lupa">
+                 <div id="lupa" class="sumir">
                     <img src="../assets/imgFooter/lupa(2).png" alt="">
                  </div>   
                  <div>
@@ -46,9 +58,22 @@
 
 export default {
     name: 'NavBar',
-    data() {
-        
+    data () {
+        return {
+       dropdown: false     
+        }
     },
+
+    methods: {
+        showmenu () {
+            this.dropdown = !this.dropdown
+        },
+
+        comeback () {
+       this.$router.push('/')
+    }
+    }
+
 }
 </script>
 <style scoped>
@@ -61,6 +86,7 @@ header {
     width: 100vw;
     height: 5em;
     background-color: #151515;
+    margin-bottom: 2em;
 }
 
 @media only screen and (min-width: 1000px){
@@ -81,8 +107,7 @@ header {
 }
 
 #box1 img {
-    width: 45px;
-    
+    width: 35px;
 }
 #box2 {
 
@@ -149,7 +174,7 @@ header {
 }
 }
 
-@media only screen and ((min-width: 300px) and (max-width: 999px))
+@media only screen and ((min-width: 440px) and (max-width: 999px))
 {
     .width1000 {
         display: none;
@@ -201,9 +226,30 @@ header {
     border-radius: 10px;
     padding: 5px 10px ;
     font-size: 15px;
-    width: 25vw;
+    width: 20vw;
+    margin-right: 20px;
 }
 
+#menu {
+
+}
+
+.dropdown {
+    margin-top:21em;
+    margin-left: 2em;
+    background-color: white;
+    padding: 1em;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.181);
+    position: absolute;
+}
+
+.dropdown li {
+    list-style-type: none;
+    margin-bottom: 1em;
+    font-weight: 200;
+}
 }
 
 </style>
