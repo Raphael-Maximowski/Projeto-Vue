@@ -15,8 +15,14 @@ import NavBar from '@/components/NavBar.vue';
     <div class="col">
       <CardsHq />
     </div>
+    <div class="col">
+      <CardsHq />
+    </div>
   </div>
   <div class="row">
+    <div class="col">
+      <CardsHq />
+    </div>
     <div class="col">
       <CardsHq />
     </div>
@@ -45,39 +51,31 @@ import NavBar from '@/components/NavBar.vue';
 .row {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   width: 100%;
-  margin-bottom: 10px;
-}
-
-
-.col {
+  margin: 20px;
+  justify-content: space-around;
   
-  flex: 1;
-  padding: 10px;
-  box-sizing: border-box;
-  margin: 10px;
 }
+
 
 .text-center {
   text-align: center;
 }
-@media (max-width: 768px) {
-  .col {
-    flex: 1 0 45%;
-  }
-  
-}
+
 
 
 @media only screen and ((min-width: 375px) and (max-width: 700px)){
-  .col {
+  .row {
     flex: 1 0 100%;
+    
+   
   }
   
 }
 
 @media only screen and ((min-width: 701px) and (max-width: 900px)){
-  .col {
+  .row {
     flex: 1 0 50%;
   }
   
@@ -85,7 +83,7 @@ import NavBar from '@/components/NavBar.vue';
 
 
 @media only screen and ((min-width: 901px) and (max-width: 1200px)){
-  .col {
+  .row {
     flex: 1 0 33.33%;
   }
 }
