@@ -1,41 +1,29 @@
-<script setup>
+<script>
 import CardsHq from '@/components/CardsHq.vue';
 import NavBar from '@/components/NavBar.vue';
+
+export default {
+  components: { 
+    CardsHq
+  },
+  data() {
+    return {
+      cards: [1, 2, 3, 4, 5, 6]
+    }
+  },
+
+}
 </script>
 
 <template>
-  <div class="container">
-  <div class="row">
-    <div class="col">
-      <CardsHq />
-    </div>
-    <div class="col">
-      <CardsHq />
-    </div>
-    <div class="col">
-      <CardsHq />
-    </div>
-    <div class="col">
-      <CardsHq />
+  <div>
+    <div v-for="(card, index) in cards" v-bind:key="index">
+      <CardsHq :card="card"/>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <CardsHq />
-    </div>
-    <div class="col">
-      <CardsHq />
-    </div>
-    <div class="col">
-      <CardsHq />
-    </div>
-    <div class="col">
-      <CardsHq />
-    </div>
-  </div>
-  </div>
+
 </template>
-<style >
+<style>
 .container {
   display: flex;
   justify-content: center;
@@ -56,7 +44,7 @@ import NavBar from '@/components/NavBar.vue';
   width: 100%;
   margin: 20px;
   justify-content: space-around;
-  
+
 }
 
 
@@ -66,27 +54,26 @@ import NavBar from '@/components/NavBar.vue';
 
 
 
-@media only screen and ((min-width: 375px) and (max-width: 700px)){
+@media only screen and ((min-width: 375px) and (max-width: 700px)) {
   .row {
     flex: 1 0 100%;
-    
-   
+
+
   }
-  
+
 }
 
-@media only screen and ((min-width: 701px) and (max-width: 900px)){
+@media only screen and ((min-width: 701px) and (max-width: 900px)) {
   .row {
     flex: 1 0 50%;
   }
-  
+
 }
 
 
-@media only screen and ((min-width: 901px) and (max-width: 1200px)){
+@media only screen and ((min-width: 901px) and (max-width: 1200px)) {
   .row {
     flex: 1 0 33.33%;
   }
 }
-
 </style>
