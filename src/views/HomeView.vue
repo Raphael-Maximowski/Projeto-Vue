@@ -16,14 +16,27 @@ export default {
 </script>
 
 <template>
-  <div>
-    <div v-for="(card, index) in cards" v-bind:key="index">
+  <div id="main">
+    <div class="cards" v-for="(card, index) in cards" v-bind:key="index">
       <CardsHq :card="card"/>
     </div>
   </div>
 
 </template>
 <style>
+
+#main {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center
+}
+
+.cards {
+  margin: 3vw 3vw;
+  
+}
+
 .container {
   display: flex;
   justify-content: center;

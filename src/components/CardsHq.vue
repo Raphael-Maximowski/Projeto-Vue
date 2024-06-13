@@ -2,7 +2,7 @@
     <div class="card">
         <img src="" alt="">
         <div class="card-body">
-            <h5 class="card-title">Título do Cartão</h5>
+            <h5 class="card-title">Teste</h5>
         </div>
     </div>
 
@@ -19,7 +19,7 @@ export default {
         .card {
             position: relative;
             width: 18rem;
-            height: 16rem;
+            height: 26rem;
             border: 1px solid #ddd;
             border-radius: 5px;
             overflow: hidden;
@@ -41,16 +41,16 @@ export default {
             left: 0;
             width: 100%;
             color: white;
-            padding: 1rem;
+      
         }
         .card-title {
             
             font-size: 1.25rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 2rem;
+            color: black;
         }
         .card-text {
-            
             font-size: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 </style>
