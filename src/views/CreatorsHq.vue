@@ -1,6 +1,6 @@
 <script>
 import CardsHq from '@/components/CardsHq.vue';
-import { getComics } from "../service/HttpService.js";
+import { getCreators } from "../service/HttpService.js";
 
 export default {
   components: { 
@@ -9,21 +9,21 @@ export default {
 
   data() {
     return {
-      comics: [1,2,3,4,5,6]
+      creators: []
     }
   },
 
   methods: {
-    async GetInfo1() {
-      const response = await getComics();
+    async GetInfo2() {
+      const response = await getCreators();
       console.log(response);
-      this.comics = response.data.data.results;
-      console.log(this.comics);
+      this.creators = response.data.data.results;
+      console.log(this.creators);
     }
   },
 
   created() {
-    this.GetInfo1();
+    this.GetInfo2();
   }
 
 }
@@ -31,9 +31,9 @@ export default {
 
 <template>
   <div id="main">
-    <div class="comic" v-for="(comic, index) in comics" v-bind:key="index">
-       <router-link :to="{ name: 'CharacterDetail', params: { id: comic.id } }">
-      <CardsHq :character="comic"/>
+    <div class="creator" v-for="(creator, index) in creators" v-bind:key="index">
+       <router-link :to="{ name: 'CharacterDetail', params: { id: creator.id } }">
+      <CardsHq :character="creator"/>
       </router-link>
     </div>
   </div>

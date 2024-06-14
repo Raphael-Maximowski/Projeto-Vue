@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import InfoCharacter from '../views/InfoCharacter.vue'
 import PersHq from '../views/PersHq.vue'
 import ComicsHq from '../views/ComicsHq.vue'
+import CreatorsHq from '../views/CreatorsHq.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -31,8 +32,13 @@ const router = createRouter({
       component: ComicsHq,
       props: true, 
     },
+    {
+      path: '/CreatorsHq',
+      name: 'CreatorsHq',
+      component: CreatorsHq,
+      props: true, 
+    },
     
-
   ]
 })
 

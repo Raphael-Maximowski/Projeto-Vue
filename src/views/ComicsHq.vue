@@ -9,7 +9,7 @@ export default {
 
   data() {
     return {
-      comics: [1,2,3,4,5,6]
+      comics: []
     }
   },
 
