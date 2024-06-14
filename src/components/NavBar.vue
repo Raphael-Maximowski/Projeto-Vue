@@ -12,8 +12,8 @@
             </div>
             <div class="dropdown" v-if = "dropdown == true">
                 <ul >
-                    <li>Personagens</li>
-                    <li>Comics</li>
+                    <li><RouterLink to="/PersHq">Personagens</RouterLink></li>
+                    <li><RouterLink to="/ComicsHq">Comics</RouterLink></li>
                     <li>Criadores</li>
                     <li>Eventos</li>
                     <li>Séries</li>
@@ -27,8 +27,8 @@
                 <img src="../assets/imgFooter/Marvel_Logo.svg.png" alt="">
             </div>
             <ul class="width1000">
-                <li>Personagens</li>
-                <li>Comics</li>
+                <li><RouterLink to="/PersHq">Personagens</RouterLink></li>
+                <li><RouterLink to="/ComicsHq">Comics</RouterLink></li>
                 <li>Criadores</li>
                 <li>Eventos</li>
                 <li>Séries</li>

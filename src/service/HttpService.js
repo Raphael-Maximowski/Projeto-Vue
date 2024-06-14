@@ -26,3 +26,13 @@ export const getCharacter = async (id) => {
     const authParams = getAuthParams();
     return await HttpService.get(`/v1/public/characters/${id}`, { params: authParams });
 };
+
+export const getComic = async () => {
+    const authParams = getAuthParams();
+    return await HttpService.get('/v1/public/comics', { params: authParams });
+};
+
+export const getComics = async (comicId) => {
+    const authParams = getAuthParams();
+    return await HttpService.get(`/v1/public/comics/{comicId}`, { params: authParams });
+};
