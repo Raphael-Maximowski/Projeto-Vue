@@ -1,24 +1,39 @@
 <script>
 import CardsHq from '@/components/CardsHq.vue';
-import NavBar from '@/components/NavBar.vue';
+import { getCharacters } from "../service/HttpService.js";
 
 export default {
   components: { 
     CardsHq
   },
+
   data() {
     return {
-      cards: [1, 2, 3, 4, 5, 6]
+      characters: []
     }
   },
+
+  methods: {
+    async GetInfo() {
+      const response = await getCharacters();
+      this.characters = response.data.data.results;
+      console.log(this.characters);
+    }
+  },
+
+  created() {
+    this.GetInfo();
+  }
 
 }
 </script>
 
 <template>
   <div id="main">
-    <div class="cards" v-for="(card, index) in cards" v-bind:key="index">
-      <CardsHq :card="card"/>
+    <div class="character" v-for="(character, index) in characters" v-bind:key="index">
+       <router-link :to="{ name: 'CharacterDetail', params: { id: character.id } }">
+      <CardsHq :character="character"/>
+      </router-link>
     </div>
   </div>
 
@@ -32,8 +47,9 @@ export default {
   justify-content: center
 }
 
-.cards {
-  margin: 3vw 3vw;
+.card {
+  margin: 0.3vw 3vw 3vw 3vw;
+  border-radius: 20px;
   
 }
 
