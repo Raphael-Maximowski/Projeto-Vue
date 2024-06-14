@@ -14,7 +14,7 @@
                 <ul >
                     <li><RouterLink to="/PersHq">Personagens</RouterLink></li>
                     <li><RouterLink to="/ComicsHq">Comics</RouterLink></li>
-                    <li>Criadores</li>
+                    <li><RouterLink to="/CreatorsHq">Criadores</RouterLink></li>
                     <li>Eventos</li>
                     <li>Séries</li>
                     <li>Histórias</li>
@@ -29,7 +29,7 @@
             <ul class="width1000">
                 <li><RouterLink to="/PersHq">Personagens</RouterLink></li>
                 <li><RouterLink to="/ComicsHq">Comics</RouterLink></li>
-                <li>Criadores</li>
+                <li><RouterLink to="/CreatorsHq">Criadores</RouterLink></li>
                 <li>Eventos</li>
                 <li>Séries</li>
                 <li>Histórias</li>
