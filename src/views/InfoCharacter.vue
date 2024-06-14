@@ -3,11 +3,11 @@
 <main>
     <div id="flex">
         <div id="imagem">
-            <div id="insideImage"></div>
+            <div id="insideImage"><img :src="character.thumbnail.path + '.' + character.thumbnail.extension"/></div>
         </div>
         <div id="desc">
             <div id="boxContent">
-                <h2>{{character.Nome}}</h2>
+                <h2>{{character.name}}</h2>
                 <p>{{character.Descricao }}</p>
             </div>
         </div>
@@ -16,16 +16,29 @@
 </template>
 
 <script>
+import { getCharacter } from '@/service/HttpService';
+
 export default {
+  props: ['id'],
   data() {
     return {
-      character: {
-        "Nome": "Iron Man",
-        "Id": 1,
-        "Descricao": "Tony Stark, um gênio bilionário, playboy e filantropo, criou uma armadura poderosa para salvar sua vida e se tornou o super-herói Iron Man. Utiliza sua inteligência e recursos para combater ameaças ao redor do mundo."
-      }
+      character: null,
     };
   },
+  async created() {
+    await this.fetchCharacter();
+  },
+  methods: {
+    async fetchCharacter() {
+      try {
+        const response = await getCharacter(this.id);
+        this.character = response.data.data.results[0];
+        console.log(this.character);
+      } catch (error) {
+        console.error('Erro ao obter dados do personagem:', error);
+      }
+    }
+  }
 };
 </script>
 
@@ -48,14 +61,17 @@ and (max-width: 700px)){
         height: 60vh;
         margin: 0vw 15vw;
         margin-top: 4em;
-        background-image: url(../assets/imgFooter/ironmain.jpg);
-        background-position: center;
-        background-size: cover;
         border-radius: 20px;
         display: flex;
         align-items: center;
         justify-content: center;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.181);
+    }
+
+    #imagem img {
+        width: 60vw;
+        height: 60vh;
+        border-radius: 20px; 
     }
 
     #desc h2 {
@@ -88,13 +104,15 @@ and (max-width: 700px)){
     #insideImage {
         width: 30vw;
         height: 30em;
-        background-image: url(../assets/imgFooter/ironmain.jpg);
-        background-position: center;
-        background-size: cover;
         border-radius: 20px;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.181);
     }
 
+    #insideImage img{
+        width: 30vw;
+        height: 30em;
+        border-radius: 20px;
+    }
     #desc {
         width: 60vw;
         display: flex;
@@ -142,6 +160,12 @@ and (max-width: 700px)){
 
     }
 
+    #insideImage img {
+        width: 30vw;
+        height: 30em;  
+        border-radius: 20px;
+    }
+
     #desc {
         width: 60vw;
         display: flex;
@@ -186,7 +210,12 @@ and (max-width: 700px)){
         background-size: cover;
         border-radius: 20px;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.181);
+    }
 
+    #insideImage img {
+        width: 30vw;
+        height: 30em;    
+        border-radius: 20px;
     }
 
     #desc {

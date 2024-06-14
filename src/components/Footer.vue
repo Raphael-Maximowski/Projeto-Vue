@@ -83,7 +83,6 @@
             </div>
         </div>
     </footer>
-    <button @click="MoreInfo">Next</button>
 
 </template>
 
