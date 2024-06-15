@@ -7,14 +7,14 @@
 </template>
 <script>
 import NavBar from './components/NavBar.vue'
-import CardsHq from './components/CardsHq.vue'
+import Card from './components/Card.vue'
 import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
     NavBar,
-    CardsHq,
+    Card,
     Footer
   },
 }
