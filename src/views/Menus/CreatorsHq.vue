@@ -1,26 +1,30 @@
 <script>
-import CardsHq from '@/components/CardsHq.vue';
-import { getCharacters } from "../service/HttpService.js";
+import Card from '../../components/Card.vue';
+import { getCreators } from "../../service/HttpService.js";
 
+// Importando os Cards
 export default {
   components: { 
-    CardsHq
+    Card
   },
 
+// Criando Array que Recebe as Requisições 
   data() {
     return {
-      characters: []
+      requisition: [],
+      avoid : "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
     }
   },
 
+  // Método para Requisitar
   methods: {
     async GetInfo() {
-      const response = await getCharacters();
-      this.characters = response.data.data.results;
-      console.log(this.characters);
+      const response = await getCreators(); // Response Recebe os Valores de cada ID 
+      this.requisition = response.data.data.results;  // Atribui o Valor de cada ID na Array Principal
     }
   },
 
+// Chama o Método e o Requisita até chegar no Limite definido na API
   created() {
     this.GetInfo();
   }
@@ -30,14 +34,18 @@ export default {
 
 <template>
   <div id="main">
-    <div class="character" v-for="(character, index) in characters" v-bind:key="index">
-       <router-link :to="{ name: 'CharacterDetail', params: { id: character.id } }">
-      <CardsHq :character="character"/>
+    <!-- Loop para Puxar A quantidade de Cards na Array Requisiton  -->
+    <div class="character" v-for="(requisition, index) in requisition" :key="index">
+      <router-link :to="{ name: 'CharacterDetail', params: { id: requisition.id } }">
+        <!-- Condicionamento para Imagens sem Fundo (! (Negação) - Caminho da API - Verifica se a String do Caminho está incluido no Void) -->
+        <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
+          <Card :requisition="requisition"/>
+        </div>
       </router-link>
     </div>
   </div>
-
 </template>
+
 <style>
 
 #main {

@@ -3,12 +3,12 @@
 <main>
     <div id="flex">
         <div id="imagem">
-            <div id="insideImage"><img :src="character.thumbnail.path + '.' + character.thumbnail.extension"/></div>
+            <div id="insideImage"><img :src="requisition.thumbnail.path + '.' + requisition.thumbnail.extension"/></div>
         </div>
         <div id="desc">
             <div id="boxContent">
-                <h2>{{character.name}}</h2>
-                <p>{{character.Descricao }}</p>
+                <h2>{{requisition.name}}</h2>
+                <p>{{requisition.Descricao }}</p>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@ export default {
   props: ['id'],
   data() {
     return {
-      character: null,
+      requisition: null,
     };
   },
   async created() {
@@ -32,8 +32,7 @@ export default {
     async fetchCharacter() {
       try {
         const response = await getCharacter(this.id);
-        this.character = response.data.data.results[0];
-        console.log(this.character);
+        this.requisition = response.data.data.results[0];
       } catch (error) {
         console.error('Erro ao obter dados do personagem:', error);
       }
@@ -152,7 +151,6 @@ and (max-width: 700px)){
     #insideImage {
         width: 30vw;
         height: 30em;
-        background-image: url(../assets/imgFooter/ironmain.jpg);
         background-position: center;
         background-size: cover;
         border-radius: 20px;
@@ -205,7 +203,6 @@ and (max-width: 700px)){
     #insideImage {
         width: 30vw;
         height: 30em;
-        background-image: url(../assets/imgFooter/ironmain.jpg);
         background-position: center;
         background-size: cover;
         border-radius: 20px;

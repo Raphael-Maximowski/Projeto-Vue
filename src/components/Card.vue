@@ -1,27 +1,31 @@
 <template>
-    <div>
-        <div class="title"> <h5 class="card-title">{{character.name}}</h5></div>
-        <div class="card">
-       <img :src="character.thumbnail.path + '.' + character.thumbnail.extension"/>
-        <div class="card-body">
-        </div>
+  <div>
+    <div class="title">
+      <!-- Puxa o nome da Array Requisição  -->
+      <h5 class="card-title">{{ requisition.name }}</h5>
     </div>
+    <div class="card">
+      <!-- Puxa a Imagem da Array Requisição  -->
+      <img :src="requisition.thumbnail.path + '.' + requisition.thumbnail.extension"/>
+      <div class="card-body">
+      </div>
     </div>
-
-
+  </div>
 </template>
+
 <script>
 export default {
-    name: 'CardsHq',
-
- props: {
-    character: {
+  name: 'Card',
+  // Cria a Array Principal, a qual é exportada para Cada Menu, e lá Preenchido com cada Rota de API
+  props: {
+    requisition: {
       type: Object,
       required: true,
     },
-    }   
+  },
 }
 </script>
+
 <style>
      .card {
             position: relative;

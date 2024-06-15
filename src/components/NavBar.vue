@@ -3,11 +3,11 @@
     <nav>
         <div id="box1">
             <div class="width1000" @click="comeback">
-                <img src="../assets/imgFooter/logo.png" alt="">
+                <img src="../assets/imagens/logo.png" alt="">
             </div>
             <div class="width900" id="menu">
                 <div @click = "showmenu">
-                    <img src="../assets/imgFooter/menu.png" alt="">
+                    <img src="../assets/imagens/menu.png" alt="">
                 </div>
             </div>
             <div class="dropdown" v-if = "dropdown == true">
@@ -24,7 +24,7 @@
         </div>
         <div id="box2">
             <div id="imgWidth900" @click="comeback">
-                <img src="../assets/imgFooter/Marvel_Logo.svg.png" alt="">
+                <img src="../assets/imagens/Marvel_Logo.svg.png" alt="">
             </div>
             <ul class="width1000">
                 <li><RouterLink to="/PersHq">Personagens</RouterLink></li>
@@ -40,7 +40,7 @@
             <form action="">
                 <div id="flex">
                  <div id="lupa" class="sumir">
-                    <img src="../assets/imgFooter/lupa(2).png" alt="">
+                    <img src="../assets/imagens/lupa(2).png" alt="">
                  </div>   
                  <div>
                     <input type="text" placeholder="Pesquisar">

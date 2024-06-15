@@ -2,7 +2,7 @@
         <footer>
         <div id="upbox">
             <div id="up1">
-                <img src="../assets/imgFooter/logo.png" alt="">
+                <img src="../assets/imagens/logo.png" alt="">
             </div>
             <div id="up2">
                 <ul>
@@ -41,7 +41,7 @@
         <div id="middlebox">
             <div id="mb1">
                 <div>
-                    <img src="../assets/imgFooter/insiderend.png" alt="">
+                    <img src="../assets/imagens/insiderend.png" alt="">
                 </div>
                 <div>
                     <h2>MARVEL INSIDER</h2>
@@ -50,7 +50,7 @@
             </div>
             <div id="mb2">
                 <div>
-                    <img src="../assets/imgFooter/unlimitedendend.png" alt="">
+                    <img src="../assets/imagens/unlimitedendend.png" alt="">
                 </div>
                 <div>
                     <h2>MARVEL UNLIMITED</h2>
@@ -63,22 +63,22 @@
             <h2>FOLLOW MARVEL</h2>
             <div id="boximg">
                 <div>
-                    <a href="https://www.facebook.com/Marvel/"><img src="../assets/imgFooter/facebook.png" alt=""></a>
+                    <a href="https://www.facebook.com/Marvel/"><img src="../assets/imagens/facebook.png" alt=""></a>
                 </div>
                 <div>
-                    <a href="https://www.instagram.com/marvel/"><img src="../assets/imgFooter/instagram.png" alt=""></a>
+                    <a href="https://www.instagram.com/marvel/"><img src="../assets/imagens/instagram.png" alt=""></a>
                 </div>
                 <div>
-                    <a href="https://www.tiktok.com/@marvel"><img src="../assets/imgFooter/tiktok.png" alt=""></a>   
+                    <a href="https://www.tiktok.com/@marvel"><img src="../assets/imagens/tiktok.png" alt=""></a>   
                 </div>
                 <div>     
-                    <a href="https://www.twitch.tv/Marvel"><img src="../assets/imgFooter/twitch.png" alt=""></a>
+                    <a href="https://www.twitch.tv/Marvel"><img src="../assets/imagens/twitch.png" alt=""></a>
                 </div>
                 <div>
-                    <a href="https://www.youtube.com/marvel"><img src="../assets/imgFooter/video.png" alt=""></a>         
+                    <a href="https://www.youtube.com/marvel"><img src="../assets/imagens/video.png" alt=""></a>         
                 </div>
                 <div>
-                    <a href="https://www.youtube.com/marvel"><img src="../assets/imgFooter/twitter.png" alt=""></a>
+                    <a href="https://www.youtube.com/marvel"><img src="../assets/imagens/twitter.png" alt=""></a>
                 </div>
             </div>
         </div>
