@@ -8,7 +8,7 @@
         <div id="desc">
             <div id="boxContent">
                 <h2>{{requisition.name}}</h2>
-                <p>{{requisition.Descricao }}</p>
+                <div v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
             </div>
         </div>
     </div>
@@ -23,6 +23,7 @@ export default {
   data() {
     return {
       requisition: null,
+      avoid: ""
     };
   },
   async created() {
