@@ -15,9 +15,9 @@
                     <li><RouterLink to="/PersHq">Personagens</RouterLink></li>
                     <li><RouterLink to="/ComicsHq">Comics</RouterLink></li>
                     <li><RouterLink to="/CreatorsHq">Criadores</RouterLink></li>
-                    <li>Eventos</li>
-                    <li>Séries</li>
-                    <li>Histórias</li>
+                    <li><RouterLink to="/EventsHq">Eventos</RouterLink></li>
+                    <li><RouterLink to="/SeriesHq">Séries</RouterLink></li>
+                    <li><RouterLink to="/StoriesHq">Histórias</RouterLink></li>
                 </ul>
             </div>
         
@@ -30,9 +30,9 @@
                 <li><RouterLink to="/PersHq">Personagens</RouterLink></li>
                 <li><RouterLink to="/ComicsHq">Comics</RouterLink></li>
                 <li><RouterLink to="/CreatorsHq">Criadores</RouterLink></li>
-                <li>Eventos</li>
-                <li>Séries</li>
-                <li>Histórias</li>
+                <li><RouterLink to="/EventsHq">Eventos</RouterLink></li>
+                <li><RouterLink to="/SeriesHq">Séries</RouterLink></li>
+                <li><RouterLink to="/StoriesHq">Histórias</RouterLink></li>
             </ul>
             
         </div>

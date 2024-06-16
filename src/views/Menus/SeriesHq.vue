@@ -1,15 +1,11 @@
 <script>
 import Card from '../../components/Card.vue';
-import { getComics } from "../../service/HttpService.js";
-import NavBar from '../../components/NavBar.vue'
-import Footer from '../../components/Footer.vue'
+import { getSeries } from "../../service/HttpService.js";
 
 // Importando os Cards
 export default {
   components: { 
-    Card,
-    NavBar,
-    Footer
+    Card
   },
 
 // Criando Array que Recebe as Requisições 
@@ -23,13 +19,12 @@ export default {
   // Método para Requisitar
   methods: {
     async GetInfo() {
-      const response = await getComics(); // Response Recebe os Valores de cada ID 
-      console.log(response)
-      this.requisition = response.data.data.results; // Atribui o Valor de cada ID na Array Principal
+      const response = await getSeries(); // Response Recebe os Valores de cada ID 
+      this.requisition = response.data.data.results;  // Atribui o Valor de cada ID na Array Principal
     }
   },
 
-  // Chama o Método e o Requisita até chegar no Limite definido na API
+// Chama o Método e o Requisita até chegar no Limite definido na API
   created() {
     this.GetInfo();
   }
@@ -38,11 +33,10 @@ export default {
 </script>
 
 <template>
-<NavBar/>
   <div id="main">
     <!-- Loop para Puxar A quantidade de Cards na Array Requisiton  -->
-    <div class="comic" v-for="(requisition, index) in requisition" :key="index">
-      <router-link :to="{ name: 'ComicDetail', params: { id: requisition.id } }">
+    <div class="series" v-for="(requisition, index) in requisition" :key="index">
+      <router-link :to="{ name: 'SeriesDetail', params: { id: requisition.id } }">
         <!-- Condicionamento para Imagens sem Fundo (! (Negação) - Caminho da API - Verifica se a String do Caminho está incluido no Void) -->
         <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
           <Card :requisition="requisition"/>
@@ -50,7 +44,6 @@ export default {
       </router-link>
     </div>
   </div>
-  <Footer/>
 </template>
 
 <style>

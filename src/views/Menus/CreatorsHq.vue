@@ -40,8 +40,8 @@ export default {
 <NavBar/>
   <div id="main">
     <!-- Loop para Puxar A quantidade de Cards na Array Requisiton  -->
-    <div class="character" v-for="(requisition, index) in requisition" :key="index">
-      <router-link :to="{ name: 'CharacterDetail', params: { id: requisition.id } }">
+    <div class="creator" v-for="(requisition, index) in requisition" :key="index">
+      <router-link :to="{ name: 'CreatorDetail', params: { id: requisition.id } }">
         <!-- Condicionamento para Imagens sem Fundo (! (Negação) - Caminho da API - Verifica se a String do Caminho está incluido no Void) -->
         <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
           <Card :requisition="requisition"/>
