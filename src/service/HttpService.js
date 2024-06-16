@@ -21,9 +21,9 @@ const getAuthParams = () => {
 };
 
 // Criando Caminho de Requisição
-export const getCharacters = async () => {
+export const getCharacters = async (page = 1) => {
     const authParams = getAuthParams(); // Passando Autenticação
-    authParams.offset = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
+    authParams.offset = (page -1) * 30; // Adicionando o parâmetro offset aos parâmetros de autenticação
     authParams.limit = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
 
     return await HttpService.get('/v1/public/characters', { params: authParams }); // Caminho de Requisição
