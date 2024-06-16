@@ -1,26 +1,34 @@
 
 <template>
     <main>
+        <NavBar />
         <div id="flex">
             <div id="imagem">
                 <div id="insideImage"><img :src="requisition.thumbnail.path + '.' + requisition.thumbnail.extension"/></div>
             </div>
             <div id="desc">
                 <div id="boxContent">
-                    <h2>{{requisition.name}}</h2>
+                    <h2>{{requisition.title}}</h2>
                     <div v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
                 </div>
             </div>
         </div>
+        <Footer />
     </main>
-    </template>
+</template>
     
-    <script>
+<script>
     import { getComic } from '@/service/HttpService';
+    import NavBar from '../../components/NavBar.vue'
+    import Footer from '../../components/Footer.vue'
     
     export default {
-      props: ['id'],
-      data() {
+        components: {
+            NavBar,
+            Footer
+        },
+        props: ['id'],
+        data() {
         return {
             requisition: [],
           avoid: ""

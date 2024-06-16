@@ -37,7 +37,7 @@ export default {
 </script>
 
 <template>
-<NavBar/>
+  <NavBar/>
   <div id="main">
     <!-- Loop para Puxar A quantidade de Cards na Array Requisiton  -->
     <div class="creator" v-for="(requisition, index) in requisition" :key="index">
