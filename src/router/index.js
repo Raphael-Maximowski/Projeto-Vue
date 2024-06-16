@@ -20,7 +20,7 @@ const router = createRouter({
       name: 'home',
       component: HomeView
     },
-
+ 
     {
       // Rota Personagens Info
       path: '/character/:id',

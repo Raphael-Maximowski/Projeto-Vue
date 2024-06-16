@@ -1,11 +1,15 @@
 <script>
 import Card from '../../components/Card.vue';
 import { getCharacters } from "../../service/HttpService.js";
+import NavBar from '../../components/NavBar.vue'
+import Footer from '../../components/Footer.vue'
 
 // Importando os Cards
 export default {
   components: { 
-    Card
+    Card,
+    NavBar,
+    Footer
   },
 
 // Criando Array que Recebe as Requisições 
@@ -34,6 +38,7 @@ export default {
 </script>
 
 <template>
+  <NavBar/>
   <div id="main">
     <!-- Loop para Puxar A quantidade de Cards na Array Requisiton  -->
     <div class="character" v-for="(requisition, index) in requisition" :key="index">
@@ -45,6 +50,7 @@ export default {
       </router-link>
     </div>
   </div>
+    <Footer/>
 </template>
 
 
