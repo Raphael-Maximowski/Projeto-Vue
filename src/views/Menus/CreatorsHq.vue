@@ -3,11 +3,16 @@ import Card from '../../components/Card.vue';
 import { getCreators } from "../../service/HttpService.js";
 import NavBar from '../../components/NavBar.vue'
 import Footer from '../../components/Footer.vue'
+import CardTitle from '../../components/CardTitle.vue';
+import CardFullName from '../../components/CardFullName.vue';
+
 
 // Importando os Cards
 export default {
   components: { 
     Card,
+    CardTitle,
+    CardFullName,
     NavBar,
     Footer
   },
@@ -43,8 +48,20 @@ export default {
     <div class="creator" v-for="(requisition, index) in requisition" :key="index">
       <router-link :to="{ name: 'CreatorDetail', params: { id: requisition.id } }">
         <!-- Condicionamento para Imagens sem Fundo (! (Negação) - Caminho da API - Verifica se a String do Caminho está incluido no Void) -->
-        <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
+        <div v-if="requisition.name">
+          <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
           <Card :requisition="requisition"/>
+          </div>
+        </div>
+        <div v-else-if="requisition.title">
+          <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
+           <CardTitle :requisition="requisition"/>
+          </div>
+        </div>
+        <div v-else-if="requisition.firstName">
+          <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
+            <CardFullName :requisition="requisition"/>
+          </div>
         </div>
       </router-link>
     </div>
