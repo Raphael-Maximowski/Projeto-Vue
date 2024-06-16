@@ -13,14 +13,14 @@ export default {
     CardTitle,
     CardFullName,
     NavBar,
-    Footer
+    Footer,
   },
 
 // Criando Array que Recebe as Requisições 
   data() {
     return {
       requisition: [],
-      avoid : "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+      avoid : "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
     }
   },
 
@@ -28,7 +28,6 @@ export default {
   methods: {
     async GetInfo() {
       const response = await getComics(); // Response Recebe os Valores de cada ID 
-      console.log(response)
       this.requisition = response.data.data.results; // Atribui o Valor de cada ID na Array Principal
     }
   },
@@ -84,30 +83,6 @@ export default {
   border-radius: 20px;
   
 }
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  position: relative;
-}
-
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 100%;
-  margin: 20px;
-  justify-content: space-around;
-
-}
-
 
 .text-center {
   text-align: center;
