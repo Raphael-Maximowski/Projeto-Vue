@@ -1,32 +1,23 @@
-
 <template>
     <main>
-        <NavBar />
         <div id="flex">
             <div id="imagem">
                 <div id="insideImage"><img :src="requisition.thumbnail.path + '.' + requisition.thumbnail.extension"/></div>
             </div>
             <div id="desc">
                 <div id="boxContent">
-                    <h2>{{requisition.firstName + requisition.middleName + requisition.lastName}}</h2>
+                    <h2>{{requisition.name}}</h2>
                     <div v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
                 </div>
             </div>
         </div>
-        <Footer />
     </main>
     </template>
     
     <script>
-    import { getCreator } from '@/service/HttpService';
-    import NavBar from '../../components/NavBar.vue';
-    import Footer from '../../components/Footer.vue';
-
+    import { getStorie } from '@/service/HttpService';
+    
     export default {
-        components: {
-            NavBar,
-            Footer
-        },
       props: ['id'],
       data() {
         return {
@@ -35,12 +26,12 @@
         };
       },
       async created() {
-        await this.fetchCreator();
+        await this.fetchStories();
       },
       methods: {
-        async fetchCreator() {
+        async fetchStories() {
           try {
-            const response = await getCreator(this.id);
+            const response = await getStorie(this.id);
             this.requisition = response.data.data.results[0];
           } catch (error) {
             console.error('Erro ao obter dados do personagem:', error);

@@ -8,7 +8,7 @@
             </div>
             <div id="desc">
                 <div id="boxContent">
-                    <h2>{{requisition.name}}</h2>
+                    <h2>{{requisition.title}}</h2>
                     <div v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
                 </div>
             </div>
