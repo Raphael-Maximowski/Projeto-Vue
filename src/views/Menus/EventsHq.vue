@@ -1,6 +1,6 @@
 <script>
 import Card from '../../components/Card.vue';
-import { getCreators } from "../../service/HttpService.js";
+import { getEvents } from "../../service/HttpService.js";
 
 // Importando os Cards
 export default {
@@ -12,19 +12,20 @@ export default {
   data() {
     return {
       requisition: [],
-      avoid : "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
+      avoid :  "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available"
     }
   },
 
   // Método para Requisitar
   methods: {
     async GetInfo() {
-      const response = await getCreators(); // Response Recebe os Valores de cada ID 
-      this.requisition = response.data.data.results;  // Atribui o Valor de cada ID na Array Principal
+      const response = await getEvents(); // Response Recebe os Valores de cada ID 
+      this.requisition = response.data.data.results; // Atribui o Valor de cada ID na Array Principal
+      console.log(this.requisition)
     }
   },
 
-// Chama o Método e o Requisita até chegar no Limite definido na API
+  // Chama o Método e o Requisita até chegar no Limite definido na API
   created() {
     this.GetInfo();
   }
@@ -35,8 +36,8 @@ export default {
 <template>
   <div id="main">
     <!-- Loop para Puxar A quantidade de Cards na Array Requisiton  -->
-    <div class="creator" v-for="(requisition, index) in requisition" :key="index">
-      <router-link :to="{ name: 'CreatorDetail', params: { id: requisition.id } }">
+    <div class="events" v-for="(requisition, index) in requisition" :key="index">
+      <router-link :to="{ name: 'EventsDetail', params: { id: requisition.id } }">
         <!-- Condicionamento para Imagens sem Fundo (! (Negação) - Caminho da API - Verifica se a String do Caminho está incluido no Void) -->
         <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
           <Card :requisition="requisition"/>
@@ -46,7 +47,13 @@ export default {
   </div>
 </template>
 
+
 <style>
+
+a {
+  color: white;
+  text-decoration: none;
+}
 
 #main {
   width: 100vw;
