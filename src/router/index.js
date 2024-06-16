@@ -9,7 +9,7 @@ import EventsHq from '../views/Menus/EventsHq.vue'
 import InfoEvents from '../views/Info/InfoEvents.vue'
 import SeriesHq from '../views/Menus/SeriesHq.vue'
 import InfoSeries from '../views/Info/InfoSeries.vue'
-
+import InfoCreators from '../views/Info/InfoCreators.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -63,7 +63,7 @@ const router = createRouter({
       // Rota Creators info
       path: '/creators/:id',
       name: 'CreatorDetail',
-      component: CreatorsHq,
+      component: InfoCreators,
       props: true,
     },
      // Rota Events
