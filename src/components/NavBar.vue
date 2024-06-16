@@ -70,7 +70,7 @@ export default {
         },
 
         comeback () {
-       this.$router.push('/')
+       this.$router.push('/PersHq')
     }
     }
 
