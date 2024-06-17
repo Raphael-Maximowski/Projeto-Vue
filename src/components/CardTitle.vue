@@ -60,7 +60,7 @@
               
               font-size: 1.25rem;
               color: black;
-              background-color: rgba(255, 255, 255, 0.744);
+             
               padding: 5px 10px;
               border-radius: 10px;
           }
