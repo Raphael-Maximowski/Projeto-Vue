@@ -11,6 +11,7 @@
                     <h2>{{requisition.firstName + requisition.middleName + requisition.lastName}}</h2>
                     <div v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
                 </div>
+               
             </div>
         </div>
         <Footer />

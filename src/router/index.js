@@ -10,6 +10,7 @@ import InfoEvents from '../views/Info/InfoEvents.vue'
 import SeriesHq from '../views/Menus/SeriesHq.vue'
 import InfoSeries from '../views/Info/InfoSeries.vue'
 import InfoCreators from '../views/Info/InfoCreators.vue'
+import FavoritoHq from '../views/FavoritoHq.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -94,6 +95,11 @@ const router = createRouter({
       component: InfoSeries,
       props: true,
     },
+    {
+      path: '/FavoritoHq',
+      name: 'Favorito',
+      component: FavoritoHq,
+    }
     
     
   ]
