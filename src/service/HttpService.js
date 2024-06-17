@@ -34,9 +34,9 @@ export const getCharacter = async (id) => {
     return await HttpService.get(`/v1/public/characters/${id}`, { params: authParams }); // Fazendo a requisição com os parâmetros
 }
 
-export const getComics = async () => {
+export const getComics = async (page = 1) => {
     const authParams = getAuthParams(); // Passando Autenticação
-    authParams.offset = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
+    authParams.offset = (page - 1) * 30; // Adicionando o parâmetro offset aos parâmetros de autenticação
     authParams.limit = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
     return await HttpService.get('/v1/public/comics', { params: authParams });  // Caminho de Requisição 
 };
@@ -46,9 +46,9 @@ export const getComic = async (id) => {
     return await HttpService.get(`/v1/public/comics/${id}`, { params: authParams });  // Caminho de Requisição 
 };
 
-export const getCreators = async () => {
+export const getCreators = async (page = 1) => {
     const authParams = getAuthParams(); // Passando Autenticação
-    authParams.offset = "99"; // Adicionando o parâmetro offset aos parâmetros de autenticação
+    authParams.offset = (page - 1) * 99; // Adicionando o parâmetro offset aos parâmetros de autenticação
     authParams.limit = "99"; // Adicionando o parâmetro offset aos parâmetros de autenticação
     return await HttpService.get('/v1/public/creators', { params: authParams });  // Caminho de Requisição 
 };
@@ -58,9 +58,9 @@ export const getCreator = async (id) => {
     return await HttpService.get(`/v1/public/creators/${id}`, { params: authParams });  // Caminho de Requisição 
 };
 
-export const getEvents = async () => {
+export const getEvents = async (page = 1) => {
     const authParams = getAuthParams(); // Passando Autenticação
-    authParams.offset = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
+    authParams.offset = (page -1 ) * 30; // Adicionando o parâmetro offset aos parâmetros de autenticação
     authParams.limit = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
     return await HttpService.get('/v1/public/events', { params: authParams });  // Caminho de Requisição 
 };
@@ -70,9 +70,9 @@ export const getEvent = async (id) => {
     return await HttpService.get(`/v1/public/events/${id}`, { params: authParams });  // Caminho de Requisição 
 };
 
-export const getSeries = async () => {
+export const getSeries = async (page = 1) => {
     const authParams = getAuthParams(); // Passando Autenticação
-    authParams.offset = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
+    authParams.offset = (page -1) * 30; // Adicionando o parâmetro offset aos parâmetros de autenticação
     authParams.limit = "30"; // Adicionando o parâmetro offset aos parâmetros de autenticação
     return await HttpService.get('/v1/public/series', { params: authParams });  // Caminho de Requisição 
 };
