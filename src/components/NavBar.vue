@@ -97,6 +97,9 @@ header {
     display: none;
 }
 
+.dropdown {
+    display: none;
+}
 #box1 {
 
     width: 20vw;
@@ -230,9 +233,7 @@ header {
     margin-right: 20px;
 }
 
-#menu {
 
-}
 
 a {
     color: black
