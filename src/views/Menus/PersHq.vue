@@ -6,7 +6,8 @@ import Footer from '../../components/Footer.vue'
 import CardTitle from '../../components/CardTitle.vue';
 import CardFullName from '../../components/CardFullName.vue';
 import Pages from '../../components/Pages.vue'
-
+import { mapActions } from 'vuex';
+import ButtonFav from '../../components/ButtonFav.vue';
 
 // Importando os Cards
 export default {
@@ -16,7 +17,8 @@ export default {
     CardTitle,
     NavBar,
     Footer,
-    Pages
+    Pages,
+    ButtonFav
   },
 
 // Criando Array que Recebe as Requisições 
@@ -30,11 +32,14 @@ export default {
 
   // Método para Requisitar
   methods: {
+    ...mapActions(['addFavoriteAction']),
+
     async GetInfo() {
       const response = await getCharacters(this.current); // Response Recebe os Valores de cada ID 
       this.requisition = response.data.data.results; // Atribui o Valor de cada ID na Array Principal
       console.log(this.requisition)
-    }
+    },
+    
   },
 
     watch: {
@@ -62,7 +67,7 @@ export default {
   <div id="main">
     <!-- Loop para Puxar A quantidade de Cards na Array Requisiton  -->
     <div class="character" v-for="(requisition, index) in requisition" :key="index">
-      <router-link :to="{ name: 'CharacterDetail', params: { id: requisition.id } }">
+      <router-link :to="{ name: 'CharacterDetail', params: { id: requisition.id } }" >
         <!-- Condicionamento para Imagens sem Fundo (! (Negação) - Caminho da API - Verifica se a String do Caminho está incluido no Void) -->
         <div v-if="requisition.name">
           <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
@@ -80,6 +85,9 @@ export default {
           </div>
         </div>
       </router-link>
+      <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
+      <ButtonFav :item="requisition" />
+      </div>
     </div>
   </div>
 <Pages v-model:current="current"/>
