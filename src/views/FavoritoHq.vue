@@ -1,9 +1,11 @@
 <template>
+    <div>
     <NavBar />
-        <div>
-            <Card v-for="favorite in getFavorites" :key="favorite.id" :character="favorite" />
+        <div class="fav">
+            <Card v-for="favorite in getFavorites" :key="favorite.id" :requisition="favorite" />
         </div>
     <Footer />
+    </div>
 </template>
 <script>
 import NavBar from '../components/NavBar.vue';
@@ -23,6 +25,11 @@ export default {
     }
 }
 </script>
-<style >
-
+<style scoped>
+    .fav {
+        width: 100vw;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center
+    }
 </style>

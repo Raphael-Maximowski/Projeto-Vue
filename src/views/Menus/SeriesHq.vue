@@ -5,7 +5,7 @@ import NavBar from '../../components/NavBar.vue'
 import Footer from '../../components/Footer.vue'
 import CardTitle from '../../components/CardTitle.vue';
 import CardFullName from '../../components/CardFullName.vue';
-
+import ButtonFav from '../../components/ButtonFav.vue';
 
 // Importando os Cards
 export default {
@@ -14,7 +14,8 @@ export default {
     CardFullName,
     CardTitle,
     NavBar,
-    Footer
+    Footer,
+    ButtonFav
   },
 
 // Criando Array que Recebe as Requisições 
@@ -64,6 +65,9 @@ export default {
           </div>
         </div>
       </router-link>
+      <div v-if="!requisition.thumbnail.path.includes(avoid)"> 
+      <ButtonFav :item="requisition" />
+      </div>
     </div>
   </div>
   <Footer />
