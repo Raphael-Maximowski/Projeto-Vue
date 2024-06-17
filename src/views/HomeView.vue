@@ -119,7 +119,7 @@ margin-bottom: 39em;
   height: 70vh;
   display: flex;
   border-radius: 40px;
-  border: 3px solid red;
+  border: 3px solid #EE171F;
 }
 
 #block1 {
@@ -160,8 +160,8 @@ button {
   height: 2em;
   width: 7vw;
   font-size: 20px;
-  background-color: red;
-  border: 2px solid red;
+  background-color: #EE171F;
+  border: 2px solid #EE171F;
   border-radius: 5px;
   color: white;
 }
@@ -169,7 +169,7 @@ button {
 #block2 {
   width: 35vw;
   height: 70vh;
-  background-color: red;
+  background-color: #EE171F;
   border-radius: 0px 39px 39px 0px;
 }
 
@@ -212,7 +212,7 @@ margin-bottom: 39em;
   height: 70vh;
   display: flex;
   border-radius: 40px;
-  border: 3px solid red;
+  border: 3px solid #EE171F;
 }
 
 #block1 {
@@ -259,8 +259,8 @@ button {
   height: 2em;
   width: 4em;
   font-size: 15px;
-  background-color: red;
-  border: 2px solid red;
+  background-color: #EE171F;
+  border: 2px solid #EE171F;
   border-radius: 5px;
   color: white;
 }
@@ -268,7 +268,7 @@ button {
 #block2 {
   width: 35vw;
   height: 70vh;
-  background-color: red;
+  background-color: #EE171F;
   border-radius: 0px 39px 39px 0px;
 }
 
