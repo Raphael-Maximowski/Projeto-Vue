@@ -30,8 +30,8 @@ export default {
         position: relative;
         overflow: hidden;
         height: 30px;
-        top: -280px;
-        right: -100px;
+        top: -340px;
+        right: -250px;
 
        
     }

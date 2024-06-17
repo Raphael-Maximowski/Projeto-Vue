@@ -9,9 +9,9 @@
             <div id="desc">
                 <div id="boxContent">
                     <h2>{{requisition.title}}</h2>
-                    <div v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
+                    <div class="descricao" v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
                 </div>
-                <div>
+                <div class="info">
                     <p>Data da primeira publicação: {{ requisition.startYear }}</p>
                     <p>Data da última publicação: {{ requisition.endYear }}</p>
                 </div>
@@ -99,6 +99,16 @@
             width: 60vw;
             font-size: 2.8vw;
         }
+
+        .descricao {
+            margin-top: 1em;
+            margin-left: 15vw;
+            padding-bottom: 0.5em;
+            text-align: justify;
+            width: 60vw;
+            font-size: 2.8vw;
+        }
+
     }
     
     @media only screen and ((min-width: 701px) and (max-width: 900px)){
@@ -147,6 +157,7 @@
             font-size: 2.5vw;
             text-align: justify;
         }
+        
     }
     
     @media only screen and ((min-width: 901px) and (max-width: 1100px)){
@@ -250,6 +261,17 @@
             font-size: 25px;
             text-align: justify;
         }
+        .info{
+            margin-top: 1em;
+            padding-bottom: 0.5em;
+            text-align: center;
+            width: 60vw;
+            font-size: 16px;
+            display: flex;
+            flex-direction: column;
+        
+        }
+
     }
     
     

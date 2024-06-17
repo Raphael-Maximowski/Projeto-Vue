@@ -3,7 +3,9 @@
     <NavBar />
         <div class="fav">
             <Card v-for="favorite in getFavorites" :key="favorite.id" :requisition="favorite" />
+            <buttonFav />
         </div>
+        
     <Footer />
     </div>
 </template>
@@ -12,13 +14,15 @@ import NavBar from '../components/NavBar.vue';
 import Footer from '../components/Footer.vue';
 import Card from '../components/Card.vue'
 import { mapGetters } from 'vuex';
+import ButtonFav from '../components/ButtonFav.vue';
 
 export default {
     name: 'Favorito',
     components: {
         NavBar,
         Footer,
-        Card
+        Card,
+        ButtonFav
     },
     computed: {
         ...mapGetters(['getFavorites'])
