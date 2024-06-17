@@ -234,10 +234,15 @@ header {
 
 }
 
+a {
+    color: black
+}
+
 .dropdown {
     margin-top:21em;
     margin-left: 2em;
     background-color: white;
+    color: black;
     padding: 1em;
     border: 1px solid grey;
     border-radius: 10px;
@@ -249,6 +254,7 @@ header {
     list-style-type: none;
     margin-bottom: 1em;
     font-weight: 200;
+    color: black;
 }
 }
 

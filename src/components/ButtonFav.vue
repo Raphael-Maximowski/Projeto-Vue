@@ -22,7 +22,7 @@ export default {
         display: inline-block;
         padding: 10px 20px;
         font-size: 16px;
-        color: white;
+        color: \white;
         background-color: #ff0000;
         border: none;
         border-radius: 5px;
