@@ -5,6 +5,7 @@ import NavBar from '../../components/NavBar.vue'
 import Footer from '../../components/Footer.vue'
 import CardTitle from '../../components/CardTitle.vue';
 import CardFullName from '../../components/CardFullName.vue';
+import Pages from '../../components/Pages.vue';
 
 // Importando os Cards
 export default {
@@ -14,6 +15,7 @@ export default {
     CardFullName,
     NavBar,
     Footer,
+    Pages
   },
 
 // Criando Array que Recebe as Requisições 
@@ -21,15 +23,22 @@ export default {
     return {
       requisition: [],
       avoid : "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+      current: 1,
     }
   },
 
   // Método para Requisitar
   methods: {
     async GetInfo() {
-      const response = await getComics(); // Response Recebe os Valores de cada ID 
+      const response = await getComics(this.current); // Response Recebe os Valores de cada ID 
       this.requisition = response.data.data.results; // Atribui o Valor de cada ID na Array Principal
     }
+  },
+
+  watch: {
+      current() {
+          this.GetInfo();
+      }
   },
 
   // Chama o Método e o Requisita até chegar no Limite definido na API
@@ -66,6 +75,7 @@ export default {
       </router-link>
     </div>
   </div>
+  <Pages v-model:current="current"/>
   <Footer/>
 </template>
 

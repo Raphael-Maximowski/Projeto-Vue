@@ -24,20 +24,26 @@ export default {
     return {
       requisition: [],
       avoid :  "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
-      current: 3
+      current: 1,
     }
   },
 
   // Método para Requisitar
   methods: {
     async GetInfo() {
-      const response = await getCharacters(); // Response Recebe os Valores de cada ID 
+      const response = await getCharacters(this.current); // Response Recebe os Valores de cada ID 
       this.requisition = response.data.data.results; // Atribui o Valor de cada ID na Array Principal
       console.log(this.requisition)
     }
   },
 
     watch: {
+      current() {
+          this.GetInfo();
+      }
+  },
+
+  watch: {
       current() {
           this.GetInfo();
       }
