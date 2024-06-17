@@ -17,7 +17,7 @@
                     <li><RouterLink to="/CreatorsHq">Criadores</RouterLink></li>
                     <li><RouterLink to="/EventsHq">Eventos</RouterLink></li>
                     <li><RouterLink to="/SeriesHq">Séries</RouterLink></li>
-                    <!--<li><RouterLink to="/StoriesHq">Histórias</RouterLink></li>-->
+                    <li><RouterLink to="/FavoritoHq">Favoritos</RouterLink></li>
                 </ul>
             </div>
         
@@ -32,7 +32,7 @@
                 <li><RouterLink to="/CreatorsHq">Criadores</RouterLink></li>
                 <li><RouterLink to="/EventsHq">Eventos</RouterLink></li>
                 <li><RouterLink to="/SeriesHq">Séries</RouterLink></li>
-                <!--<li><RouterLink to="/StoriesHq">Histórias</RouterLink></li>-->
+                <li><RouterLink to="/FavoritoHq">Favoritos</RouterLink></li>
             </ul>
             
         </div>

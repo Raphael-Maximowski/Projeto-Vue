@@ -8,6 +8,7 @@
         <!-- Puxa a Imagem da Array Requisição  -->
         <img :src="requisition.thumbnail.path + '.' + requisition.thumbnail.extension"/>
         <div class="card-body">
+          <button class="star-button"></button>
         </div>
       </div>
     </div>
@@ -27,6 +28,32 @@
   </script>
   
   <style>
+      .star-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #ff0000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        height: 30px;
+        top: -270px;
+        right: -100px;
+
+       
+    }
+
+    .star-button::before {
+        content: '★';
+        font-size: 20px;
+        position: absolute;
+        left: 10px; /* Adjust the position as needed */
+        top: 40%;
+        transform: translateY(-50%);
+    }
        .card {
               position: relative;
               width: 18rem;
