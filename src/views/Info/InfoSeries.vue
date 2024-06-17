@@ -10,11 +10,12 @@
                 <div id="boxContent">
                     <h2>{{requisition.title}}</h2>
                     <div class="descricao" v-if= "this?.requisition.description == this.avoid">Nenhuma descrição foi encontrada no nosso banco de dados . . .</div>
-                </div>
-                <div class="info">
+                    <div class="info">
                     <p>Data da primeira publicação: {{ requisition.startYear }}</p>
                     <p>Data da última publicação: {{ requisition.endYear }}</p>
                 </div>
+                </div>
+
             </div>
         </div>
         <Footer />
