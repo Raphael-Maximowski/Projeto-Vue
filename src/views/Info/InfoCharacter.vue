@@ -9,7 +9,7 @@
         <div id="desc">
             <div id="boxContent">
                 <h2>{{requisition.name}}</h2>
-                <div v-if= "this?.requisition.description == this.avoid"><p>Nenhuma descrição foi encontrada no nosso banco de dados . . .</p></div>
+                <div v-if= "this?.requisition.description == this.avoid"><p class="teste" >Nenhuma descrição foi encontrada no nosso banco de dados . . .</p></div>
             </div>
         </div>
     </div>
@@ -140,6 +140,10 @@ and (max-width: 700px)){
     }
 
     #boxContent p {
+        font-size: 2.5vw;
+        text-align: justify;
+    }
+    .teste {
         font-size: 2.5vw;
         text-align: justify;
     }
